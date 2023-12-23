@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Calculo Agentes</h1>
+</div>
+
+<form method="get" asp-route-handler="search">
+    <p>Agent a:</p>
+    <input type="text" name="AgentA" id="AgentA" />
+    <br />
+    <p>Agent b:</p>
+    <input type="text" name="AgentB" id="AgentB"  />
+    <br />
+    <p>Agent c:</p>
+    <input type="text" name="AgentC" id="AgentC"  />
+    <br />
+    <button type="submit">Search</button>
+</form>

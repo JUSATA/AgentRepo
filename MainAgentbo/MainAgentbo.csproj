@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BF630C4-01BD-4C23-80A1-95D5A3CFBB0A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MainAgentbo</RootNamespace>
+    <AssemblyName>MainAgentbo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clean.Architecture.Core\Clean.Architecture.Domain.csproj">
+      <Project>{9b05aa6c-da57-47f3-91f3-ffe9caddc18c}</Project>
+      <Name>Clean.Architecture.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clean.Architecture.Infrastructure\Clean.Architecture.CaseUse.csproj">
+      <Project>{b1547dc0-b845-4884-9cc3-326b924c9eb1}</Project>
+      <Name>Clean.Architecture.CaseUse</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clean.Architecture.UseCases\Clean.Architecture.Presentation.csproj">
+      <Project>{c8a7b582-87e4-4d5e-b742-02889570a9bd}</Project>
+      <Name>Clean.Architecture.Presentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FactoryBuild\Clean.Architecture.Factory.csproj">
+      <Project>{06d56ae1-1f2b-4244-a7a8-324d5268cdfa}</Project>
+      <Name>Clean.Architecture.Factory</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
